@@ -5,3 +5,5 @@ __pycache__/
 Thumbs.db
 _preview_*.png
 source.pdf
+.pat.tmp
+_automation_shots/
