@@ -1,0 +1,12 @@
+{
+  "name": "111th SB Change of Command — 2 May 2026",
+  "short_name": "111SB CoC",
+  "start_url": "./",
+  "scope": "./",
+  "display": "minimal-ui",
+  "background_color": "#fbfaf6",
+  "theme_color": "#7a1f1f",
+  "icons": [
+    { "src": "assets/ssi.png", "sizes": "400x599", "type": "image/png" }
+  ]
+}
