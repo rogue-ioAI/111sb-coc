@@ -45,7 +45,8 @@
   figcaption{font-size:.85rem;color:var(--ink-soft);font-style:italic;text-align:center;
     margin-top:8px;padding:0 6px;line-height:1.4}
   .bio-photo{width:60%;max-width:240px;margin:8px auto 18px;border-radius:4px}
-  .bio-name{text-align:center;font-size:1.4rem;font-weight:700;margin:0}
+  .bio-name{text-align:center;font-size:1.4rem;font-weight:700;margin:0;line-height:1.25}
+  .bio-name .bio-rank,.bio-name .bio-fullname{display:block}
   .bio-role{text-align:center;font-size:1rem;color:var(--ink-soft);margin:.2em 0}
   .bio-role.subtitle{margin-bottom:1.2em}
   footer{text-align:center;font-size:.8rem;color:var(--ink-soft);margin-top:40px;
@@ -128,7 +129,7 @@
   <section aria-labelledby="outgoing-title">
     <h2 id="outgoing-title" class="section-title">Outgoing Commander</h2>
     <img class="bio-photo" src="assets/james.jpg" alt="Portrait of Colonel Eric Weston James" width="165" height="177" loading="lazy">
-    <p class="bio-name">Colonel Eric Weston James</p>
+    <p class="bio-name"><span class="bio-rank">Colonel</span><span class="bio-fullname">Eric Weston James</span></p>
     <p class="bio-role">Outgoing Commander</p>
     <p class="bio-role subtitle">Biography</p>
 
@@ -147,7 +148,7 @@
 
   <section aria-labelledby="incoming-title">
     <h2 id="incoming-title" class="section-title">Incoming Commander</h2>
-    <p class="bio-name" style="margin-top:18px">Colonel Rudylee Daniel Armijo</p>
+    <p class="bio-name" style="margin-top:18px"><span class="bio-rank">Colonel</span><span class="bio-fullname">Rudylee Daniel Armijo</span></p>
     <p class="bio-role">Incoming Commander</p>
     <p class="bio-role subtitle">Biography</p>
 

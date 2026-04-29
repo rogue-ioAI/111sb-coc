@@ -1,6 +1,6 @@
 // Cache-first service worker for the 111SB Change of Command program.
 // Tiny, single page, ~250KB total — safe to precache everything.
-const CACHE = "111sb-coc-v1";
+const CACHE = "111sb-coc-v2";
 const ASSETS = [
   "./",
   "./index.html",
