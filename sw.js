@@ -1,6 +1,7 @@
-// Cache-first service worker for the 111SB Change of Command program.
-// Tiny, single page, ~250KB total — safe to precache everything.
-const CACHE = "111sb-coc-v3";
+// Service worker for the 111SB Change of Command program.
+// HTML: network-first (so edits show up on next visit).
+// Assets: cache-first (small page, fine to keep cached).
+const CACHE = "111sb-coc-v4";
 const ASSETS = [
   "./",
   "./index.html",
@@ -28,6 +29,22 @@ self.addEventListener("activate", (e) => {
 self.addEventListener("fetch", (e) => {
   const req = e.request;
   if (req.method !== "GET") return;
+  const isHTML = req.mode === "navigate" ||
+    (req.headers.get("accept") || "").includes("text/html");
+  if (isHTML) {
+    // Network-first for HTML; fall back to cache offline.
+    e.respondWith(
+      fetch(req)
+        .then((res) => {
+          const copy = res.clone();
+          caches.open(CACHE).then((c) => c.put(req, copy)).catch(()=>{});
+          return res;
+        })
+        .catch(() => caches.match(req).then((hit) => hit || caches.match("./index.html")))
+    );
+    return;
+  }
+  // Cache-first for everything else.
   e.respondWith(
     caches.match(req).then((hit) => {
       if (hit) return hit;
