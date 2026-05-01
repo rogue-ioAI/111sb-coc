@@ -13,10 +13,10 @@ print("after exif:", im.size)
 # Face is in the upper portion. Crop a head-and-shoulders square-ish region.
 # Empirically tuned for this specific photo.
 # Face center roughly at x=2000 (centered horizontally), y=1900 (upper third).
-# From preview: face center ~(2000,1600), head top ~y=550, shoulders ~y=2600.
-# Crop head-and-shoulders, leaving small margin above head.
+# Match james.jpg framing: top of head -> just below rank insignia.
+# In 4000x6000: head top ~y=550, US ARMY tape ~y=2900, rank eagle ~y=3150.
 top = 350
-bottom = 2900
+bottom = 3450
 crop_h = bottom - top
 crop_w = int(crop_h * 165 / 177)
 cx = 2000
