@@ -1,13 +1,14 @@
 // Cache-first service worker for the 111SB Change of Command program.
 // Tiny, single page, ~250KB total — safe to precache everything.
-const CACHE = "111sb-coc-v2";
+const CACHE = "111sb-coc-v3";
 const ASSETS = [
   "./",
   "./index.html",
   "./manifest.webmanifest",
   "./assets/ssi.png",
   "./assets/prussian.jpg",
-  "./assets/james.jpg"
+  "./assets/james.jpg",
+  "./assets/armijo.jpg"
 ];
 
 self.addEventListener("install", (e) => {
